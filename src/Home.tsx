@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
   textHeader: {
     color: "white",
     fontSize: 30,
-    width: 200
+    width: 250,
+    fontFamily: "Poppins-Bold"
   },
   notifications: {
     color: "#4023D7",
