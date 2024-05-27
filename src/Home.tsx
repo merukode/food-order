@@ -1,6 +1,8 @@
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Button, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+
+const promo = {uri: 'https://raw.githubusercontent.com/merukode/food-order/main/src/assets/promo.png'}
 
 const Home = () => {
   return (
@@ -16,7 +18,15 @@ const Home = () => {
         </View>
         <Ionicons style={styles.filterIcon} name='filter' size={30}/>
       </View>
-      <View></View>
+      <View style={styles.promoView}>
+        <ImageBackground source={promo} resizeMode='cover' style={styles.promo}>
+          <View style={styles.promoLeft}></View>
+          <View>
+          <Text style={styles.promoText}>Special Deal For October</Text>
+          <Button title='Buy Now' color="#2A2C38"/>
+          </View>
+        </ImageBackground>
+      </View>
     </ScrollView>
   )
 }
@@ -70,5 +80,31 @@ const styles = StyleSheet.create({
     padding: 15,
     color: "white",
     borderRadius: 10
+  },
+  promoView: {
+    marginTop: 30,
+  },
+  promo: {
+    flex: 1,
+    height: 150,
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    borderRadius: 10
+
+  },
+  promoLeft: {
+    width: 200,
+    height: 150,
+  },
+  promoText: {
+    fontFamily: "Poppins-Bold",
+    fontSize: 20,
+    width: 150,
+    color: "#fff"
+  },
+  promoBtn: {
+    color: "#6B50F6",
+    borderRadius: 20
   }
 })
