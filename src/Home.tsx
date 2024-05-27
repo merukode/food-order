@@ -27,6 +27,10 @@ const Home = () => {
           </View>
         </ImageBackground>
       </View>
+      <View style={styles.nearest}>
+        <Text>Nearest Restaurant</Text>
+        <Text>View More</Text>
+      </View>
     </ScrollView>
   )
 }
@@ -106,5 +110,12 @@ const styles = StyleSheet.create({
   promoBtn: {
     color: "#6B50F6",
     borderRadius: 20
+  },
+  nearest: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+    
   }
 })
