@@ -3,55 +3,58 @@ import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import restaurant from "./data/restaurant.json"
 
-const promo = {uri: 'https://raw.githubusercontent.com/merukode/food-order/main/src/assets/promo.png'}
+const promo = { uri: 'https://raw.githubusercontent.com/merukode/food-order/main/src/assets/promo.png' }
 
 const Home = () => {
   return (
     <ScrollView style={styles.root}>
       <View style={styles.header}>
         <Text style={styles.textHeader}>Find Your Favourite Food</Text>
-        <Ionicons style={styles.notifications}name='notifications-circle-outline' size={40} />
+        <Ionicons style={styles.notifications} name='notifications-circle-outline' size={40} />
       </View>
       <View style={styles.searchParent}>
         <View style={styles.searchChild}>
-          <Ionicons style={styles.searchIcon} name='search' size={30}/>
-          <TextInput placeholder='What do you want to order ?' placeholderTextColor="#AFAFAF"/>
+          <Ionicons style={styles.searchIcon} name='search' size={30} />
+          <TextInput placeholder='What do you want to order ?' placeholderTextColor="#AFAFAF" />
         </View>
-        <Ionicons style={styles.filterIcon} name='filter' size={30}/>
+        <Ionicons style={styles.filterIcon} name='filter' size={30} />
       </View>
       <View style={styles.promoView}>
         <ImageBackground source={promo} resizeMode='cover' style={styles.promo}>
           <View style={styles.promoLeft}></View>
           <View>
-          <Text style={styles.promoText}>Special Deal For October</Text>
-          <Button title='Buy Now' color="#2A2C38"/>
+            <Text style={styles.promoText}>Special Deal For October</Text>
+            <Button title='Buy Now' color="#2A2C38" />
           </View>
         </ImageBackground>
       </View>
       <View style={styles.nearest}>
-        <Text style={{color: "#fff", fontSize: 15, fontWeight: "bold"}}>Nearest Restaurant</Text>
+        <Text style={{ color: "#fff", fontSize: 15, fontWeight: "bold" }}>Nearest Restaurant</Text>
+        <Text style={{ color: "#6B50F6" }}>View More</Text>
+      </View>
+      <ScrollView
+        horizontal={true}>
+        {restaurant.map((item, key) => (
+          <View style={styles.restaurantParent} key={key}>
+            <Image style={{
+              width: 80,
+              height: 80,
+              marginBottom: 15
+            }} source={{ uri: item.image }} />
+            <Text style={{ color: "#fff", fontWeight: "bold" }}>{item.title}</Text>
+            <Text style={{ color: "#909090", textAlign: "center" }}>{item.time}</Text>
+          </View>
+        ))}
+      </ScrollView>
+      <View style={styles.nearest}>
+        <Text style={{color: "#fff", fontSize: 15, fontWeight: "bold"}}>Popular Menu</Text>
         <Text style={{color: "#6B50F6"}}>View More</Text>
       </View>
-        <ScrollView 
-        horizontal={true}>
-          {restaurant.map((item, key) => (
-            <View style={styles.restaurantParent} key={key}>
-              <Image style={{
-                width: 80,
-                height: 80,
-                marginBottom: 15
-              }} source={{uri: item.image}}/>
-              <Text style={{color: "#fff", fontWeight: "bold"}}>{item.title}</Text>
-              <Text style={{color: "#909090", textAlign: "center"}}>{item.time}</Text>
-            </View>
-          ))}
-        </ScrollView>
     </ScrollView>
   )
 }
 
 export default Home
-
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "#2A2C38",
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 5,
     width: 300
-    
+
   },
   searchIcon: {
     color: "white"
