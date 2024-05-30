@@ -28,8 +28,11 @@ const Home = () => {
         </ImageBackground>
       </View>
       <View style={styles.nearest}>
-        <Text>Nearest Restaurant</Text>
-        <Text>View More</Text>
+        <Text style={{color: "#fff", fontSize: 15, fontWeight: "bold"}}>Nearest Restaurant</Text>
+        <Text style={{color: "#6B50F6"}}>View More</Text>
+      </View>
+      <View>
+        
       </View>
     </ScrollView>
   )
@@ -115,7 +118,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between"
-    
+    justifyContent: "space-between",
+    marginTop: 20,
+    marginBottom: 20,
   }
+
 })
