@@ -1,6 +1,7 @@
 import { Button, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import restaurant from "./data/restaurant.json"
 
 const promo = {uri: 'https://raw.githubusercontent.com/merukode/food-order/main/src/assets/promo.png'}
 
@@ -31,9 +32,20 @@ const Home = () => {
         <Text style={{color: "#fff", fontSize: 15, fontWeight: "bold"}}>Nearest Restaurant</Text>
         <Text style={{color: "#6B50F6"}}>View More</Text>
       </View>
-      <View>
-        
-      </View>
+        <ScrollView 
+        horizontal={true}>
+          {restaurant.map((item, key) => (
+            <View style={styles.restaurantParent} key={key}>
+              <Image style={{
+                width: 80,
+                height: 80,
+                marginBottom: 15
+              }} source={{uri: item.image}}/>
+              <Text style={{color: "#fff", fontWeight: "bold"}}>{item.title}</Text>
+              <Text style={{color: "#909090", textAlign: "center"}}>{item.time}</Text>
+            </View>
+          ))}
+        </ScrollView>
     </ScrollView>
   )
 }
@@ -121,6 +133,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 20,
     marginBottom: 20,
+  },
+  restaurantParent: {
+    backgroundColor: "#22242E",
+    padding: 20,
+    borderRadius: 20,
+    margin: 10,
   }
-
 })

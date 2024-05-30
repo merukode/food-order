@@ -1,0 +1,25 @@
+[
+    {
+        "image" : "https://raw.githubusercontent.com/merukode/food-order/main/src/assets/resto1.png",
+        "title": "Vegan Resto",
+        "time": "12 Mins"
+    },
+    {
+        "image" : "https://raw.githubusercontent.com/merukode/food-order/main/src/assets/resto2.png",
+        "title": "Healthy Food",
+        "time": "8 Mins"
+    },
+    {
+        "image" : "https://raw.githubusercontent.com/merukode/food-order/main/src/assets/resto3.png",
+        "title": "Good Food",
+        "time": "12 Mins"
+    },
+    {
+        "image" : "https://raw.githubusercontent.com/merukode/food-order/main/src/assets/resto4.png",
+        "title": "Smart Resto",
+        "time": "8 Mins"
+    }
+
+
+
+]
